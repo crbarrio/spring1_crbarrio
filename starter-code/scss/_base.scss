@@ -1,0 +1,50 @@
+@use "variables";
+
+body {
+    font-family: variables.$font-family-base;
+    font-size: variables.$font-size-base;
+    line-height: variables.$line-height-base;
+    margin: 0;
+    padding: 0; 
+}
+
+p, small {
+    color: variables.$color-text-light;
+}
+
+small {
+    font-size: 0.9rem;
+    color: variables.$color-text-light;
+}
+
+h1 {
+    line-height: 1.2em;
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+    line-height: 1.1em;
+}
+
+h4 {
+    font-size: 1.3em;
+}
+
+img {
+    max-width: 100%;
+}
+
+.contact-joined {
+    letter-spacing: 5px;
+}
+
+
+
+.flex-1 {
+    flex: 1;
+}
+
+.column-reverse {
+    flex-direction: column-reverse;
+}
