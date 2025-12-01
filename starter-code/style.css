@@ -188,6 +188,7 @@ img {
 
 .mobile .div-logos-navbar {
     display: flex;
+    align-items: center;
 }
 
 
@@ -660,12 +661,14 @@ button:hover {
     }
 
     .nav-item-footer:hover {
-        color: var(--color-active)
+        color: var(--color-active);
+        cursor: pointer;        
     }
 
 
     .logo-twitter:hover, .logo-facebook:hover  {
         fill:  var(--color-active);
+        cursor: pointer;
     }
 
 }
