@@ -1,53 +1,11 @@
-// Header
-// Footer
-// Navigation
-// Layout containers
-
 @use "variables";
-
-
-@mixin div-container ($max-width) {
-  max-width: $max-width;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: variables.$side-padding-default;
-  padding-right: variables.$side-padding-default;
-  box-sizing: border-box;
-}
-
-
-
-@mixin flex ($flex-direction: column) {
-  display: flex;
-  flex-direction: $flex-direction;
-  align-items: center;
-  text-align: center;
-}
-
-@mixin nav-styles ($bg-color: white) {
-  background-color: $bg-color;
-  padding: variables.$nav-padding;
-  justify-items: end;
-  font-size: 0.8em;
-}
-
-
-@mixin mobile-nav-styles {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  z-index: 10;
-  background-color: variables.$color-nav-header-mobile;
-
-}
-
+@use "mixins";
 
 header {
   nav {
-    @include nav-styles(variables.$color-nav-header);
-    @include div-container(variables.$max-width-full);
-    @include flex(row);
+    @include mixins.nav-styles(variables.$color-nav-header);
+    @include mixins.div-container(variables.$max-width-full);
+    @include mixins.flex(row);
     gap: 4rem;
 
     .navbar-header {
@@ -61,7 +19,7 @@ header {
 
     .nav-item {
       text-decoration: none;
-      color: var(--color-text-dark);
+      color: variables.$color-text-dark;
       display: none;
       font-size: 1.2rem;
     }
@@ -76,20 +34,37 @@ header {
     #icon-close {
       display: none;
     }
-  }
 
+    @media (min-width: 768px) {
+      #icon-menu {
+        display: none;
+      }
+
+      .nav-item {
+        display: block;
+      }
+
+      .nav-item:hover {
+        color: variables.$color-active;
+      }
+      
+      .div-logos-navbar {
+        display: none;
+      }
+    }
+  }
 
   /* Active mobile menu */
 
   .mobile {
-    @include mobile-nav-styles;
+    @include mixins.mobile-nav-styles;
     flex-direction: column;
     gap: 0rem;
-    
+
     .nav-item {
       display: block;
       padding: 1.2rem;
-      border-bottom: 1px solid var(--color-border-light);
+      border-bottom: 1px solid variables.$color-border-light;
       text-align: center;
       letter-spacing: 0.1rem;
       width: 100%;
@@ -98,7 +73,11 @@ header {
     }
 
     .nav-item-features {
-      border-top: 1px solid var(--color-border-light);
+      border-top: 1px solid variables.$color-border-light;
+    }
+
+    .nav-item-login {
+      border-bottom: none;
     }
 
     #icon-close {
@@ -125,72 +104,334 @@ header {
     .div-logos {
       display: flex;
     }
-
   }
 }
-
 
 /* Section General */
 
 section {
+  padding-top: variables.$section-padding-default;
+  padding-bottom: variables.$section-padding-default;
+
   .div-full {
-    @include div-container(variables.$max-width-full);
+    @include mixins.div-container(variables.$max-width-full);
     margin-bottom: variables.$margin-bottom-default;
   }
 
   .div-medium {
-    @include div-container(variables.$max-width-medium);
+    @include mixins.div-container(variables.$max-width-medium);
     margin-bottom: variables.$margin-bottom-default;
   }
 
   .div-thin {
-    @include div-container(variables.$max-width-thin);
+    @include mixins.div-container(variables.$max-width-thin);
     margin-bottom: variables.$margin-bottom-default;
+    text-align: center;
   }
 }
 
 /* Section Hero */
 
-.div-buttons-hero {
-  @include flex(row);
-  gap: 1rem;
-  justify-content: center;
+#section-hero {
+  @include mixins.flex(column-reverse);
+  @include mixins.div-container(variables.$max-width-full);
+  margin-bottom: variables.$margin-bottom-default;
+  overflow: hidden;
 }
 
+.div-buttons-hero {
+  @include mixins.flex(row);
+  gap: 1rem;
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    justify-content: flex-start;
+  }
+}
+
+.div-hero-image {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+  overflow: visible;
+
+  @media (min-width: 768px) {
+    margin: 0;
+  }
+
+  img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+  }
+
+  .bg-hero {
+    position: absolute;
+    right: -15%;
+    top: 28%;
+    width: 100%;
+    aspect-ratio: 2/1;
+    background-color: variables.$color-primary;
+    border-radius: 999px 0 0 999px;
+    z-index: 1;
+
+    @media (min-width: 768px) {
+      right: -25%;
+      top: 25%;         
+      width: 110%;
+      aspect-ratio: 2/1; 
+    }
+  }
+}
+
+/* Section Features*/
+
+#section-features {
+  overflow: hidden;
+
+  .tabcontent {
+    @include mixins.flex(column);
+    margin: 3rem 0;
+    min-height: 400px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: center;
+      gap: 4rem;
+      min-height: 450px;
+    }
+  }
+}
+
+.feature-image {
+  position: relative;
+  max-width: 500px;
+  min-height: 300px;
+  margin: 0 auto 2.5rem;
+  overflow: visible;
+
+  @media (min-width: 768px) {
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .bg-feature {
+    position: absolute;
+    left: -15%;
+    top: 40%;
+    width: 100%;
+    aspect-ratio: 2/1;
+    background-color: variables.$color-primary;
+    border-radius: 0 999px 999px 0;
+    z-index: 1;
+
+    @media (min-width: 768px) {
+      left: -25%;
+      top: 35%;         
+      width: 110%;
+      aspect-ratio: 2/1; 
+    }
+  }
+
+  img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: block;
+    z-index: 2;
+  }
+}
+
+.tab-buttons {
+
+  @include mixins.flex(column);
+
+  .div-tab-btn,
+  %div-tab-btn {
+    border-bottom: 1px solid variables.$color-border-light;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* First tab button needs top and bottom borders to match others */
+  .btn-tab-1 {
+    @extend %div-tab-btn;
+    border-top: 1px solid variables.$color-border-light;
+
+    @media (min-width: 768px) {
+      border-top: none;
+    }
+  }
+
+  @media (min-width: 768px) {
+    gap: 0;
+
+    .tab-btn:hover, %div-tab-btn:hover {
+      color: var(--color-active);
+    }
+  }
+}
+
+/* Section Cards */
+
+.div-cards {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+
+    .card {
+      width: 18rem;
+    }
+
+    .card-chrome {
+      margin-top: 2rem;
+    }
+
+    .card-firefox {
+      margin-top: 4rem;
+    }
+
+    .card-opera {
+      margin-top: 6rem;
+    }
+  }
+}
+
+/* Section Collapse*/
+
+.collapse-section {
+  border-bottom: 1px solid variables.$color-border-light;
+
+  .collapse-btn {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .collapse-btn:hover {
+      color: variables.$color-active;
+      cursor: pointer;
+    }
+  }
+
+  .collapse-content {
+    text-align: left;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  .active-collapsible {
+    transform: rotate(180deg);
+  }
+
+  .active-collapsible path {
+    stroke: variables.$color-active;
+  }
+}
+
+/* Section Contact */
+
+#section-contact {
+  background-color: variables.$color-primary;
+  color: white;
+  text-align: center;
+  padding-bottom: 5%;
+
+  form {
+    @include mixins.flex(column);
+    gap: 1rem;
+
+    div {
+      @include mixins.flex(column);
+      width: 100%;
+
+      @media (min-width: 768px) {
+        flex: 2;
+      }
+    }
+
+    input {
+      width: 100%;
+      border: 1px solid variables.$color-border-light;
+      border-radius: 4px;
+      padding: 0.9rem 1.6rem;
+      box-sizing: border-box;
+    }
+
+    .input-error {
+      border: 2px solid variables.$color-active !important;
+      background-image: url("images/icon-error.svg");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 1.25rem;
+      padding-right: 2.8rem;
+    }
+
+    .error-message {
+      background-color: variables.$color-active;
+      color: white;
+      font-size: 0.75em;
+      font-style: italic;
+      text-align: left;
+      width: 100%;
+      border-radius: 0px 0px 4px 4px;
+      margin-top: -2px;
+      padding-left: 1.5rem;
+      box-sizing: border-box;
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      button {
+        flex: 1;
+      }
+    }
+  }
+}
 
 /* Footer */
 
 footer {
   nav {
-    @include nav-styles(variables.$color-nav-footer);
-    @include div-container(variables.$max-width-full);
-    @include flex(column);
+    @include mixins.nav-styles(variables.$color-nav-footer);
+    @include mixins.flex(column);
     gap: 2rem;
+
   }
 
   .nav-item {
     text-decoration: none;
     color: white;
+
+    @media (min-width: 768px) {
+      &:hover {
+        color: variables.$color-active;
+      }  
+    } 
   }
 
   .div-logos {
-    @include flex(row);
+    @include mixins.flex(row);
     gap: 2rem;
+
+    @media (min-width: 768px) {
+      margin-left: auto;
+    }
   }
-}
 
+  @media (min-width: 768px) {
+    .logo-twitter:hover, .logo-facebook:hover {
+      fill: variables.$color-active;
+      cursor: pointer;
+    }
+  }
 
-
-
-
-section {
-  padding-top: variables.$section-padding-default;
-  padding-bottom: variables.$section-padding-default;
-}
-
-
-
-.div-thin {
-  text-align: center;
-  margin-bottom: variables.$margin-bottom-default;
+  
 }

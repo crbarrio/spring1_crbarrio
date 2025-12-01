@@ -1,0 +1,42 @@
+@use "variables";
+
+@mixin div-container ($max-width) {
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: variables.$side-padding-default;
+  padding-right: variables.$side-padding-default;
+  box-sizing: border-box;
+}
+
+@mixin flex ($flex-direction: column) {
+    display: flex;
+    flex-direction: $flex-direction;
+    align-items: center;
+    text-align: center;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        text-align: left;
+        justify-content: center;
+        gap: 5rem;
+    }
+
+}
+
+@mixin nav-styles ($bg-color: white) {
+  background-color: $bg-color;
+  padding: variables.$nav-padding;
+  justify-items: end;
+  font-size: 0.8em;
+}
+
+@mixin mobile-nav-styles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  z-index: 10;
+  background-color: variables.$color-nav-header-mobile;
+
+}

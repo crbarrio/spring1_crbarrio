@@ -25,7 +25,7 @@
             <a href="#section-features" class="nav-item nav-item-features mobile-menu">FEATURES</a>
             <a href="#section-download" class="nav-item mobile-menu">PRICING</a>
             <a href="#section-contact" class="nav-item mobile-menu">CONTACT</a>
-            <button class="button-login nav-item">LOGIN</button>
+            <a href="#" class="nav-item nav-item-login"><button class="button-login">LOGIN</button></a>
             <div class="div-logos">
                 <div class="logo-twitter flex">
                     <img src="images/icon-facebook.svg" alt="Facebook" id="logo-facebook">
@@ -39,20 +39,18 @@
     </header>
     <main>
         <section id="section-hero">
-            <div class="div-full flex column-reverse">
-                <div class="flex-1">
-                    <h1 class="hero-header">A Simple Bookmark Manager</h1>
-                    <p>A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free.</p>
-                    <div class="div-buttons-hero">
-                        <button class="button-primary">Get it on Chrome</button>
-                        <button class="button-secondary">Get it on Firefox</button>
-                    </div>
+            <div class="flex-1">
+                <h1>A Simple Bookmark Manager</h1>
+                <p>A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free.</p>
+                <div class="div-buttons-hero">
+                    <button class="button-primary">Get it on Chrome</button>
+                    <button class="button-secondary">Get it on Firefox</button>
                 </div>
-                <div class="flex-1 div-hero-image">
-                    <div class="circle-hero"></div>
-                    <div class="bg-hero"></div>
-                    <img src="images/illustration-hero.svg" alt="Illustration of a hero section">
-                </div>
+            </div>
+            <div class="flex-1 div-hero-image">
+                <div class="circle-hero"></div>
+                <div class="bg-hero"></div>
+                <img src="images/illustration-hero.svg" alt="Illustration of a hero section">
             </div>
         </section>
 
@@ -62,7 +60,7 @@
                 <p>Our aim is to make quick and easy fro you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.</p>
             </div>
             <div class="div-medium">
-                <div class="flex tab-buttons">
+                <div class="tab-buttons">
                     <div class="btn-tab-1 flex-1"><button class="tab-btn active-tab" onclick="showTab(event, 'tabFeatures1')">Simple Bookmarking</button></div>
                     <div class="div-tab-btn flex-1"><button class="tab-btn" onclick="showTab(event, 'tabFeatures2')">Speedy Searching</button></div>
                     <div class="div-tab-btn flex-1"><button class="tab-btn" onclick="showTab(event, 'tabFeatures3')">Easy Sharing</button></div>
@@ -70,11 +68,10 @@
             </div>
             
             <div class="div-full">
-                <div class="flex tabcontent" id="tabFeatures1">
+                <div class="tabcontent" id="tabFeatures1">
                     <div class="flex-1">
                         <div class="feature-image">
                             <div class="bg-feature"></div>
-                            <div class="circle-feature"></div>
                             <img src="images/illustration-features-tab-1.svg" alt="Feature illustration 1">
                         </div>
                     </div>
@@ -85,11 +82,10 @@
                     </div>
                 </div>
 
-                <div class="flex tabcontent" id="tabFeatures2" style="display: none;">
+                <div class="tabcontent" id="tabFeatures2" style="display: none;">
                     <div class="flex-1">
                         <div class="feature-image">
                             <div class="bg-feature"></div>
-                            <div class="circle-feature"></div>
                             <img src="images/illustration-features-tab-2.svg" alt="Feature illustration 2">
                         </div>
                     </div>
@@ -100,11 +96,10 @@
                     </div>
                 </div>
 
-                <div class="flex tabcontent" id="tabFeatures3" style="display: none;">
+                <div class="tabcontent" id="tabFeatures3" style="display: none;">
                     <div class="flex-1">
                         <div class="feature-image">
                             <div class="bg-feature"></div>
-                            <div class="circle-feature"></div>
                             <img src="images/illustration-features-tab-3.svg" alt="Feature illustration 3">
                         </div>
                     </div>
@@ -223,8 +218,8 @@
             <div class="div-thin">
                 <span class="contact-joined">35.000+ ALREADY JOINED</span>
                 <h2>Stay up-to-date with what we're doing</h2>
-                <form class="form flex" id="formContact">
-                    <div class="div-input-contact"> 
+                <form id="formContact">
+                    <div> 
                         <input type="text" placeholder="Enter your email address">
                         <div class="error-message" id="errorMessage">Whoops, make sure it's an email</div>
                     </div>
@@ -234,7 +229,7 @@
         </section>
     </main>
     <footer>
-        <nav class="div-full flex nav-bar">
+        <nav class="flex nav-bar">
             <img src="images/logo-bookmark-white.svg" alt="Logo Bookmark">
             <a href="#section-features" class="nav-item">FEATURES</a>
             <a href="#section-download" class="nav-item">PRICING</a>

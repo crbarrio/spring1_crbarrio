@@ -5,7 +5,11 @@ body {
     font-size: variables.$font-size-base;
     line-height: variables.$line-height-base;
     margin: 0;
-    padding: 0; 
+    padding: 0;
+
+    @media (min-width: 768px) {
+        font-size: 1.3em;
+    }
 }
 
 p, small {
@@ -45,6 +49,3 @@ img {
     flex: 1;
 }
 
-.column-reverse {
-    flex-direction: column-reverse;
-}
