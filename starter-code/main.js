@@ -128,9 +128,6 @@ window.addEventListener('load', function () {
 });
 
 
-
-
-
 const collapsibleElements = document.getElementsByClassName('collapse-btn')
 
 for (let i = 0; i < collapsibleElements.length; i++) {
@@ -180,7 +177,4 @@ for (let i = 0; i < mobileMenuElements.length; i++) {
         document.getElementById('navbar').classList.toggle('mobile');
     })
 }
-
-
-
 
