@@ -190,7 +190,7 @@ section {
 #section-features {
   overflow: hidden;
 
-  .tabcontent {
+  [role="tabpanel"] {
     @include mixins.flex(column);
     margin: 3rem 0;
     min-height: 400px;
@@ -201,6 +201,10 @@ section {
       gap: 4rem;
       min-height: 450px;
     }
+  }
+
+  .is-hidden {
+    display: none;
   }
 }
 
@@ -243,7 +247,7 @@ section {
   }
 }
 
-.tab-buttons {
+[role="tablist"] {
 
   @include mixins.flex(column);
 
@@ -267,8 +271,9 @@ section {
   @media (min-width: 768px) {
     gap: 0;
 
-    .tab-btn:hover, %div-tab-btn:hover {
-      color: var(--color-active);
+    [role="tab"]:hover, %div-tab-btn:hover {
+      color: variables.$color-active;
+      cursor: pointer;
     }
   }
 }
@@ -311,6 +316,10 @@ section {
     justify-content: space-between;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    font-size: 1rem;
   }
 
   @media (min-width: 768px) {

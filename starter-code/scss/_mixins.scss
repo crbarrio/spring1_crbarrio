@@ -40,3 +40,21 @@
   background-color: variables.$color-nav-header-mobile;
 
 }
+
+@mixin button-styles ($bg-color, $text-color, $border-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: 0.9rem 1.6rem;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    font-weight: bold;
+
+    @media (min-width: 768px) {
+        &:hover {
+            background-color: white;
+            color: $border-color;
+            border: 1px solid $border-color;
+            cursor: pointer;
+        }  
+    }
+}

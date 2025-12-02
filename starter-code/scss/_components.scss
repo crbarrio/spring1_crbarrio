@@ -1,35 +1,18 @@
 @use 'variables';
+@use 'mixins';
 
 /* BUTTONS */
 
-@mixin button-styles ($bg-color, $text-color, $border-color) {
-    background-color: $bg-color;
-    color: $text-color;
-    padding: 0.9rem 1.6rem;
-    border: 1px solid $border-color;
-    border-radius: 4px;
-    font-weight: bold;
-
-    @media (min-width: 768px) {
-        &:hover {
-            background-color: white;
-            color: $border-color;
-            border: 1px solid $border-color;
-            cursor: pointer;
-        }  
-    }
-}
-
 .button-login {
-    @include button-styles(variables.$color-active, white, variables.$color-active);
+    @include mixins.button-styles(variables.$color-active, white, variables.$color-active);
 }
 
 .button-primary {
-    @include button-styles(variables.$color-primary, white, variables.$color-primary);
+    @include mixins.button-styles(variables.$color-primary, white, variables.$color-primary);
 }
 
 .button-secondary {
-    @include button-styles(variables.$color-secondary, variables.$color-text-dark, variables.$color-secondary);
+    @include mixins.button-styles(variables.$color-secondary, variables.$color-text-dark, variables.$color-secondary);
 }
 
 
@@ -40,7 +23,7 @@
 
 /* TABS */
 
-.tab-btn {
+[role="tab"] {
     margin-left: 0px;
     margin-right: 0px;
     border: none;
@@ -52,7 +35,7 @@
     font-size: 0.9em;
 }
 
-.active-tab {
+[role="tab"][aria-selected="true"]  {
     border-bottom: solid variables.$color-active;
 }
 

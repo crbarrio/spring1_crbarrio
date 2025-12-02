@@ -1,1 +1,0 @@
-Instrucciones en [briefing](/starter-code/briefing.md)

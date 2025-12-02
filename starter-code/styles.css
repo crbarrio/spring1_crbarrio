@@ -104,7 +104,7 @@ img {
 }
 
 /* TABS */
-.tab-btn {
+[role=tab] {
   margin-left: 0px;
   margin-right: 0px;
   border: none;
@@ -116,7 +116,7 @@ img {
   font-size: 0.9em;
 }
 
-.active-tab {
+[role=tab][aria-selected=true] {
   border-bottom: solid #da4315;
 }
 
@@ -390,31 +390,34 @@ section .div-thin {
 #section-features {
   overflow: hidden;
 }
-#section-features .tabcontent {
+#section-features [role=tabpanel] {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 @media (min-width: 768px) {
-  #section-features .tabcontent {
+  #section-features [role=tabpanel] {
     flex-direction: row;
     text-align: left;
     justify-content: center;
     gap: 5rem;
   }
 }
-#section-features .tabcontent {
+#section-features [role=tabpanel] {
   margin: 3rem 0;
   min-height: 400px;
 }
 @media (min-width: 768px) {
-  #section-features .tabcontent {
+  #section-features [role=tabpanel] {
     flex-direction: row;
     align-items: center;
     gap: 4rem;
     min-height: 450px;
   }
+}
+#section-features .is-hidden {
+  display: none;
 }
 
 .feature-image {
@@ -456,43 +459,44 @@ section .div-thin {
   z-index: 2;
 }
 
-.tab-buttons {
+[role=tablist] {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 @media (min-width: 768px) {
-  .tab-buttons {
+  [role=tablist] {
     flex-direction: row;
     text-align: left;
     justify-content: center;
     gap: 5rem;
   }
 }
-.tab-buttons .div-tab-btn,
-.tab-buttons .btn-tab-1 {
+[role=tablist] .div-tab-btn,
+[role=tablist] .btn-tab-1 {
   border-bottom: 1px solid rgb(212, 212, 212);
   width: 100%;
   text-align: center;
 }
-.tab-buttons {
+[role=tablist] {
   /* First tab button needs top and bottom borders to match others */
 }
-.tab-buttons .btn-tab-1 {
+[role=tablist] .btn-tab-1 {
   border-top: 1px solid rgb(212, 212, 212);
 }
 @media (min-width: 768px) {
-  .tab-buttons .btn-tab-1 {
+  [role=tablist] .btn-tab-1 {
     border-top: none;
   }
 }
 @media (min-width: 768px) {
-  .tab-buttons {
+  [role=tablist] {
     gap: 0;
   }
-  .tab-buttons .tab-btn:hover, .tab-buttons .btn-tab-1:hover {
-    color: var(--color-active);
+  [role=tablist] [role=tab]:hover, [role=tablist] .btn-tab-1:hover {
+    color: #da4315;
+    cursor: pointer;
   }
 }
 
@@ -529,6 +533,10 @@ section .div-thin {
   justify-content: space-between;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  font-size: 1rem;
 }
 @media (min-width: 768px) {
   .collapse-section .collapse-btn:hover {
