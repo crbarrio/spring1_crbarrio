@@ -3,13 +3,13 @@
 
 :root {
   /* Variables de color */
-  --color-primary: rgba(83, 104, 223);
+  --color-primary: #5368DF;
   --color-secondary: #dfdfdf;
   --color-active: #da4315;
-  --color-footer: rgba(36, 41, 69);
+  --color-footer: #242945;
   --color-text-light: #808080;
   --color-text-dark: #333333;
-  --color-border-light: rgb(212, 212, 212);   
+  --color-border-light: #D4D4D4;   
 
   --font-main: 'Nunito', sans-serif;
 }
@@ -86,8 +86,8 @@ h2 {
     line-height: 1.1em;
 }
 
-h4 {
-    font-size: 1.3em;
+h3 {
+    font-size: 1.2em;
 }
 
 img {
@@ -95,7 +95,7 @@ img {
 }
 
 .contact-joined {
-    letter-spacing: 5px;
+    letter-spacing: 0.3rem;
 }
 
 
@@ -204,7 +204,7 @@ img {
 
 .div-hero-image {
     position: relative;
-    max-width: 500px;
+    max-width: 31rem;
     margin: 0 auto;
     overflow: visible; 
 }
@@ -223,7 +223,7 @@ img {
     width: 100%;
     aspect-ratio: 2/1;
     background-color: var(--color-primary);
-    border-radius: 999px 0 0 999px;
+    border-radius: 62.4rem 0 0 62.4rem;
     z-index: 1;
 }
 
@@ -232,20 +232,6 @@ img {
     flex-direction: row;
     gap: 1rem;
     justify-content: center;
-}
-
-.div-tab-btn {
-    border-bottom: 1px solid var(--color-border-light);
-    width: 100%;
-    text-align: center;
-}
-
-/* First tab button needs top and bottom borders to match others */
-.btn-tab-1 {
-    border-top: 1px solid var(--color-border-light);
-    border-bottom: 1px solid var(--color-border-light);
-    width: 100%;
-    text-align: center;
 }
 
 
@@ -257,8 +243,8 @@ img {
 
 .feature-image {
     position: relative;
-    max-width: 500px;
-    min-height: 300px;
+    max-width: 31.25rem;
+    min-height: 18.75rem;
     margin: 0 auto 2.5rem;
     overflow: visible;
 }
@@ -279,14 +265,49 @@ img {
     width: 100%;
     aspect-ratio: 2/1;  
     background-color: var(--color-primary);
-    border-radius: 0 999px 999px 0;
+    border-radius: 0 62.4rem 62.4rem 0;
     z-index: 1;
 }
 
-#section-features .tabcontent {
+#section-features [role="tabpanel"] {
     margin: 3rem 0;
-    min-height: 400px;
+    min-height: 25rem;
 }
+
+[role="tab"] {
+    margin-left: 0px;
+    margin-right: 0px;
+    border: none;
+    border-bottom: solid white;
+    border-radius: 0px;
+    background-color: transparent;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    font-size: 0.9em;
+}
+
+[role="tab"][aria-selected="true"] {
+    border-bottom: solid var(--color-active);
+}
+
+.div-tab-btn {
+    border-bottom: 1px solid var(--color-border-light);
+    width: 100%;
+    text-align: center;
+}
+
+/* First tab button needs top and bottom borders to match others */
+.btn-tab-1 {
+    border-top: 1px solid var(--color-border-light);
+    border-bottom: 1px solid var(--color-border-light);
+    width: 100%;
+    text-align: center;
+}
+
+.is-hidden {
+    display: none;
+}
+
 
 /* Section Extensions */
 
@@ -300,7 +321,7 @@ img {
     height: 26rem;
     margin: 1rem;
     border-radius: 5%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 #00000033;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -331,10 +352,15 @@ img {
 /* Section Collapse*/
 
 .collapse-btn {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: var(--color-text-dark);
     display: flex;
     justify-content: space-between;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1.5rem 0;
 }
 
 .collapse-content {
@@ -469,21 +495,7 @@ button:hover {
     border: 1px solid var(--color-secondary);
 }
 
-.tab-btn {
-    margin-left: 0px;
-    margin-right: 0px;
-    border: none;
-    border-bottom: solid white;
-    border-radius: 0px;
-    background-color: transparent;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
-    font-size: 0.9em;
-}
 
-.active-tab {
-    border-bottom: solid var(--color-active);
-}
 
 
 @media (min-width: 768px) {
@@ -558,7 +570,7 @@ button:hover {
 
     /* Section Features */
 
-    #section-features .tabcontent {
+    #section-features [role="tabpanel"] {
         flex-direction: row;
         align-items: center;
         gap: 4rem;
@@ -581,13 +593,16 @@ button:hover {
         border-top: none;
     }
 
-    .tab-btn:hover {
+    [role="tab"]:hover {
         color: var(--color-active);
+        cursor: pointer;
     }
 
-    .flex.tab-buttons {
+    [role="tablist"] {
         gap: 0;
     }
+
+
 
 
     /* Cards */

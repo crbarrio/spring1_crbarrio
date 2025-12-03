@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bookmark landing page. A simple bookmark manager to organize your favourite websites.">
+    <meta name="author" content="Carlos Ramirez">
     <link rel="icon" href="images/favicon-32x32.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,16 +63,17 @@
                 <h2>Features</h2>
                 <p>Our aim is to make quick and easy fro you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.</p>
             </div>
-            <div class="div-medium mb-3">
-                <div class="flex tab-buttons">
-                    <div class="btn-tab-1 flex-1"><button class="tab-btn active-tab" onclick="showTab(event, 'tabFeatures1')">Simple Bookmarking</button></div>
-                    <div class="div-tab-btn flex-1"><button class="tab-btn" onclick="showTab(event, 'tabFeatures2')">Speedy Searching</button></div>
-                    <div class="div-tab-btn flex-1"><button class="tab-btn" onclick="showTab(event, 'tabFeatures3')">Easy Sharing</button></div>
+            
+            <div class="div-medium">
+                <div role="tablist" class="flex">
+                    <div class="btn-tab-1 flex-1"><button id="tab-1" role="tab" aria-selected="true" aria-controls="tabFeatures1">Simple Bookmarking</button></div>
+                    <div class="div-tab-btn flex-1"><button id="tab-2" role="tab" aria-selected="false" aria-controls="tabFeatures2" tabindex="-1">Speedy Searching</button></div>
+                    <div class="div-tab-btn flex-1"><button id="tab-3" role="tab" aria-selected="false" aria-controls="tabFeatures3" tabindex="-1">Easy Sharing</button></div>
                 </div>
             </div>
             
             <div class="div-full">
-                <div class="flex tabcontent" id="tabFeatures1">
+                <div id="tabFeatures1" role="tabpanel" aria-labelledby="tab-1" tabindex="0" class="flex">
                     <div class="flex-1">
                         <div class="feature-image">
                             <div class="bg-feature"></div>
@@ -84,7 +87,7 @@
                     </div>
                 </div>
 
-                <div class="flex tabcontent" id="tabFeatures2" style="display: none;">
+                <div id="tabFeatures2" role="tabpanel" aria-labelledby="tab-2" tabindex="0" class="flex">
                     <div class="flex-1">
                         <div class="feature-image">
                             <div class="bg-feature"></div>
@@ -98,7 +101,7 @@
                     </div>
                 </div>
 
-                <div class="flex tabcontent" id="tabFeatures3" style="display: none;">
+                <div id="tabFeatures3" role="tabpanel" aria-labelledby="tab-3" tabindex="0" class="flex">
                     <div class="flex-1">
                         <div class="feature-image">
                             <div class="bg-feature"></div>
@@ -112,7 +115,6 @@
                     </div>
                 </div>
             </div>
-            
         </section>
 
         <section id="section-download">
@@ -126,7 +128,7 @@
                         <img src="images/logo-chrome.svg" alt="Logo Chrome">
                     </div>
                     <div class="card-body">
-                        <h4>Add to Chrome</h4>
+                        <h3>Add to Chrome</h3>
                         <small>Minimum version 6.2</small>
                     </div>
                     <img class="img-dots" src="images/bg-dots.svg" alt="Background dots">
@@ -140,7 +142,7 @@
                         <img src="images/logo-firefox.svg" alt="Logo Firefox">
                     </div>
                     <div class="card-body">
-                        <h4>Add to Firefox</h4>
+                        <h3>Add to Firefox</h3>
                         <small>Minimun version 55</small>
                     </div>
                     <img class="img-dots" src="images/bg-dots.svg" alt="Background dots">
@@ -154,7 +156,7 @@
                         <img src="images/logo-opera.svg" alt="Logo Opera">
                     </div>
                     <div class="card-body">
-                        <h4>Add to Opera</h4>
+                        <h3>Add to Opera</h3>
                         <small>Minimum version 46</small>
                     </div>
                     <img class="img-dots" src="images/bg-dots.svg" alt="Background dots">
@@ -172,42 +174,42 @@
             </div>
             <div class="div-thin mb-3">
                 <div class="collapse-section">
-                    <div class="collapse-btn">What is Bookmark? 
+                    <button class="collapse-btn" aria-expanded="false" aria-controls="collapse-content-1">What is Bookmark? 
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12"><path fill="none" stroke="#5267DF" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
                         </div>
-                    </div>
-                    <div class="collapse-content">
+                    </button>
+                    <div class="collapse-content" id="collapse-content-1">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero sunt illum optio nulla, expedita fuga veniam. Sunt praesentium cum itaque accusantium perspiciatis, tempora dignissimos accusamus quia illo officiis! Iste, architecto.</p>
                     </div>
                 </div>
                 <div class="collapse-section">
-                    <div class="collapse-btn">How can I request a new browser? 
+                    <button class="collapse-btn" aria-expanded="false" aria-controls="collapse-content-2">How can I request a new browser? 
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12"><path fill="none" stroke="#5267DF" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
                         </div>
-                    </div>
-                    <div class="collapse-content">
+                    </button>
+                    <div class="collapse-content" id="collapse-content-2">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero sunt illum optio nulla, expedita fuga veniam. Sunt praesentium cum itaque accusantium perspiciatis, tempora dignissimos accusamus quia illo officiis! Iste, architecto.</p>
                     </div>
                 </div>
                 <div class="collapse-section">
-                    <div class="collapse-btn">Is there a mobile app? 
+                    <button class="collapse-btn" aria-expanded="false" aria-controls="collapse-content-3">Is there a mobile app? 
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12"><path fill="none" stroke="#5267DF" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
                         </div>
-                    </div>
-                    <div class="collapse-content">
+                    </button>
+                    <div class="collapse-content" id="collapse-content-3">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero sunt illum optio nulla, expedita fuga veniam. Sunt praesentium cum itaque accusantium perspiciatis, tempora dignissimos accusamus quia illo officiis! Iste, architecto.</p>
                     </div>
                 </div>
                 <div class="collapse-section">
-                    <div class="collapse-btn">What about Chronium browsers? 
+                    <button class="collapse-btn" aria-expanded="false" aria-controls="collapse-content-4">What about Chronium browsers? 
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12"><path fill="none" stroke="#5267DF" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
                         </div>
-                    </div>
-                    <div class="collapse-content">
+                    </button>
+                    <div class="collapse-content" id="collapse-content-4">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero sunt illum optio nulla, expedita fuga veniam. Sunt praesentium cum itaque accusantium perspiciatis, tempora dignissimos accusamus quia illo officiis! Iste, architecto.</p>
                     </div>
                 </div>
