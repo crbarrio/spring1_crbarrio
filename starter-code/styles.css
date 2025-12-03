@@ -531,12 +531,13 @@ section .div-thin {
 .collapse-section .collapse-btn {
   display: flex;
   justify-content: space-between;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  font-weight: normal;
+  padding: 1.1rem 0;
   border: none;
   background-color: transparent;
   width: 100%;
   font-size: 1rem;
+  color: #333333;
 }
 @media (min-width: 768px) {
   .collapse-section .collapse-btn:hover {
