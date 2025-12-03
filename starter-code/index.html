@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Bookmark</title>
 </head>
-<body>
+<body style="font-family: Roboto, sans-serif;" class="bg-gray-100">
     <header>
         <nav class=" px-6 py-4 w-full h-full flex flex-col sm:flex-row sm:bg-transparent sm:relative sm:justify-between" id="nav-bar">
             <div class="flex justify-between">
@@ -36,14 +36,14 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <section class="flex flex-col-reverse mt-8" id="section-hero">
-            <div >
-                <h1 class="">A Simple Bookmark Manager</h1>
-                <p>A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free.</p>
-                <div class="">
-                    <button class="">Get it on Chrome</button>
-                    <button class="">Get it on Firefox</button>
+    <main class="px-10 py-8">
+        <section class="flex flex-col-reverse items-center mt-8" id="section-hero">
+            <div class="text-center">
+                <h1 class="text-4xl/relaxed font-bold mb-6">A Simple Bookmark Manager</h1>
+                <p class="text-xl/relaxed text-gray-500">A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free.</p>
+                <div class="mt-10 flex gap-2 justify-center">
+                    <button class="text-white text-bold text-lg border-1 border-violet-500 bg-violet-500 rounded-md px-5 py-3">Get it on Chrome</button>
+                    <button class="text-gray-700 text-bold text-lg border-1 border-transparent shadow-sm bg-gray-50 rounded-md px-5 py-3">Get it on Firefox</button>
                 </div>
             </div>
             <div class="">
@@ -53,28 +53,28 @@
             </div>
         </section>
 
-        <section id="section-features">
-            <div class="">
-                <h2>Features</h2>
-                <p>Our aim is to make quick and easy fro you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.</p>
+        <section class="mt-40" id="section-features">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-center mb-6">Features</h2>
+                <p class="text-xl/relaxed text-gray-500">Our aim is to make quick and easy fro you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.</p>
             </div>
-            <div class="div-medium">
-                <div role="tablist">
-                    <div class="btn-tab-1 flex-1"><button id="tab-1" role="tab" aria-selected="true" aria-controls="tabFeatures1">Simple Bookmarking</button></div>
-                    <div class="div-tab-btn flex-1"><button id="tab-2" role="tab" aria-selected="false" aria-controls="tabFeatures2" tabindex="-1">Speedy Searching</button></div>
-                    <div class="div-tab-btn flex-1"><button id="tab-3" role="tab" aria-selected="false" aria-controls="tabFeatures3" tabindex="-1">Easy Sharing</button></div>
-                </div>
+
+            <div role="tablist" class="mt-10 flex flex-col items-center">
+                <div class="py-6 border-t-1 border-gray-300 w-full text-center text-xl text-gray-600"><button id="tab-1" role="tab" aria-selected="true" aria-controls="tabFeatures1">Simple Bookmarking</button></div>
+                <div class="py-6 border-t-1 border-gray-300 w-full text-center text-xl text-gray-600"><button id="tab-2" role="tab" aria-selected="false" aria-controls="tabFeatures2" tabindex="-1">Speedy Searching</button></div>
+                <div class="py-6 border-t-1 border-b-1 border-gray-300 w-full text-center text-xl text-gray-600"><button id="tab-3" role="tab" aria-selected="false" aria-controls="tabFeatures3" tabindex="-1">Easy Sharing</button></div>
             </div>
+
             
-            <div class="div-full">
+            <div class="div-full mt-20">
                 <div id="tabFeatures1" role="tabpanel" aria-labelledby="tab-1" tabindex="0">
-                    <div class="flex-1">
+                    <div class="">
                         <div class="feature-image">
                             <div class="bg-feature"></div>
                             <img src="images/illustration-features-tab-1.svg" alt="Feature illustration 1">
                         </div>
                     </div>
-                    <div class="flex-1">
+                    <div class="">
                         <h2>Bookmark in one click</h2>
                         <p>Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites.</p>
                         <button class="button-primary">More info</button>
@@ -82,13 +82,13 @@
                 </div>
 
                 <div id="tabFeatures2" role="tabpanel" aria-labelledby="tab-2" tabindex="0">
-                    <div class="flex-1">
+                    <div class="">
                         <div class="feature-image">
                             <div class="bg-feature"></div>
                             <img src="images/illustration-features-tab-2.svg" alt="Feature illustration 2">
                         </div>
                     </div>
-                    <div class="flex-1">
+                    <div class="">
                         <h2>Intelligent search</h2>
                         <p>Our powerful search feature will help you find saved sites in no time at all. No need to trawl though all of your bookmarks.</p>
                         <button class="button-primary">More info</button>
@@ -96,13 +96,13 @@
                 </div>
 
                 <div id="tabFeatures3" role="tabpanel" aria-labelledby="tab-3" tabindex="0">
-                    <div class="flex-1">
+                    <div class="">
                         <div class="feature-image">
                             <div class="bg-feature"></div>
                             <img src="images/illustration-features-tab-3.svg" alt="Feature illustration 3">
                         </div>
                     </div>
-                    <div class="flex-1">
+                    <div class="">
                         <h2>Share your bookmarks</h2>
                         <p>Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.</p>
                         <button class="button-primary">More info</button>
