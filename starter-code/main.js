@@ -172,9 +172,20 @@ formContact.addEventListener('submit', function(event) {
 const mobileMenuElements = document.getElementsByClassName('mobile-menu')
 
 for (let i = 0; i < mobileMenuElements.length; i++) {
-    mobileMenuElements[i].addEventListener('click', function () {
-        
-        document.getElementById('navbar').classList.toggle('mobile');
-    })
+  mobileMenuElements[i].addEventListener('click', function () {
+    document.getElementById('navbar').classList.remove('mobile');
+  })
 }
+
+const iconMenu =  document.getElementById('icon-menu');
+
+iconMenu.addEventListener('click', function () {
+  document.getElementById('navbar').classList.add('mobile');
+});
+
+const iconClose =  document.getElementById('icon-close');
+
+iconClose.addEventListener('click', function () {
+  document.getElementById('navbar').classList.remove('mobile');
+});
 
