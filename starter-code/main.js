@@ -130,21 +130,21 @@ window.addEventListener('load', function () {
 const collapsibleElements = document.getElementsByClassName('collapse-btn')
 
 for (let i = 0; i < collapsibleElements.length; i++) {
-    collapsibleElements[i].addEventListener('click', function () {
-        
-        this.getElementsByTagName('svg')[0].classList.toggle('active-collapsible');
+  collapsibleElements[i].addEventListener('click', function () {
+      
+    this.getElementsByTagName('svg')[0].classList.toggle('active-collapsible');
 
-        const isExpanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', !isExpanded);
+    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', !isExpanded);
 
-        let content = this.nextElementSibling;
+    let content = this.nextElementSibling;
 
-        if (content.style.maxHeight){
-            content.style.maxHeight = null;
-        } else {
-            content.style.maxHeight = content.scrollHeight + "px";
-        }
-    })
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  })
 }
 
 
@@ -152,31 +152,41 @@ for (let i = 0; i < collapsibleElements.length; i++) {
 const formContact = document.getElementById('formContact');
 
 formContact.addEventListener('submit', function(event) {
-    event.preventDefault();
-    const emailInput = this.querySelector('input[type="text"]');
-    const email = emailInput.value.trim();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
-    const errorMessage = document.getElementById('errorMessage');
+  event.preventDefault();
+  const emailInput = this.querySelector('input[type="text"]');
+  const email = emailInput.value.trim();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+  const errorMessage = document.getElementById('errorMessage');
 
-    errorMessage.style.display = 'none';
-    emailInput.classList.remove('input-error');
+  errorMessage.style.display = 'none';
+  emailInput.classList.remove('input-error');
 
-    if (!emailRegex.test(email)) {
-        errorMessage.style.display = 'block';
-        emailInput.classList.add('input-error');
-    }
+  if (!emailRegex.test(email)) {
+    errorMessage.style.display = 'block';
+    emailInput.classList.add('input-error');
+  }
 });
 
 const mobileMenuElements = document.getElementsByClassName('mobile-menu')
 
 for (let i = 0; i < mobileMenuElements.length; i++) {
-    mobileMenuElements[i].addEventListener('click', function () {
-        
-        document.getElementById('navbar').classList.toggle('mobile');
-    })
+  mobileMenuElements[i].addEventListener('click', function () {
+    document.getElementById('navbar').classList.remove('mobile');
+  })
 }
 
+const iconMenu =  document.getElementById('icon-menu');
+
+iconMenu.addEventListener('click', function () {
+  document.getElementById('navbar').classList.add('mobile');
+});
+
+const iconClose =  document.getElementById('icon-close');
+
+iconClose.addEventListener('click', function () {
+  document.getElementById('navbar').classList.remove('mobile');
+});
 
 
 
