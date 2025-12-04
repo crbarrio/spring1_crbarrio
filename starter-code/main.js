@@ -12,8 +12,7 @@ openMenu.addEventListener('click', function () {
 
     openMenu.classList.add('hidden');
     closeMenu.classList.remove('hidden');
-    navbar.classList.add('bg-slate-600/90');
-    navbar.classList.add('absolute');
+    navbar.classList.add('bg-slate-600/90', 'absolute');
     logoBookmark.classList.add('fill-white');
 
 });
@@ -24,8 +23,7 @@ closeMenu.addEventListener('click', function () {
 
     closeMenu.classList.add('hidden');
     openMenu.classList.remove('hidden');
-    navbar.classList.remove('bg-slate-600/90');
-    navbar.classList.remove('absolute');
+    navbar.classList.remove('bg-slate-600/90', 'absolute');
     logoBookmark.classList.remove('fill-white');
 
 });
@@ -169,7 +167,7 @@ window.addEventListener('load', function () {
 });
 
 
-const collapsibleElements = document.getElementsByClassName('collapse-btn')
+const collapsibleElements = document.getElementsByClassName('collapse-header')
 
 for (let i = 0; i < collapsibleElements.length; i++) {
     collapsibleElements[i].addEventListener('click', function () {
@@ -199,17 +197,23 @@ const formContact = document.getElementById('formContact');
 formContact.addEventListener('submit', function(event) {
     event.preventDefault();
     const emailInput = this.querySelector('input[type="text"]');
-    const email = emailInput.value.trim();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
+    const inputDiv = document.getElementById('input-div');
     const errorMessage = document.getElementById('errorMessage');
 
-    errorMessage.style.display = 'none';
-    emailInput.classList.remove('input-error');
+    errorMessage.classList.add('hidden');
+    inputDiv.classList.remove('bg-red-500');
+    emailInput.classList.remove("error-input");
+    emailInput.classList.add('border-gray-500');
+
+    const email = emailInput.value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(email)) {
-        errorMessage.style.display = 'block';
-        emailInput.classList.add('input-error');
+      errorMessage.classList.remove('hidden');
+      emailInput.classList.remove('border-gray-500');
+      emailInput.classList.add('input-error');
+      inputDiv.classList.add('bg-red-500');
+      emailInput.classList.add("error-input");
     }
 });
 

@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #5368DF;
+  --color-active: #da4315;
+  --color-footer: #242945;
+}
+
+@layer base {
+  body {
+    @apply text-gray-800 bg-gray-100;
+    font-family: Nunito, sans-serif;
+  }
+}
+
+@layer utilities {
+  /* base + hover variant, like Tailwind */
+  .text-active {
+    color: var(--color-active);
+  }
+  .hover\:text-active:hover {
+    color: var(--color-active);
+  }
+
+  .fill-active {
+    fill: var(--color-active);
+  }
+  .hover\:fill-active:hover {
+    fill: var(--color-active);
+  }
+
+  .bg-footer {
+    @apply bg-[var(--color-footer)];
+  }
+
+  .bg-primary {
+    @apply bg-[var(--color-primary)];
+  }
+}
+
+@layer components {
+  .header-2 {
+    @apply text-3xl font-bold text-center mb-6;
+  }
+
+  .nav-li {
+    @apply border-t border-white w-full text-center py-6 sm:border-t-0 sm:py-0;
+  }
+
+  .nav-link {
+    @apply text-white font-bold tracking-widest hover:cursor-pointer sm:text-gray-700 hover:text-[var(--color-active)];
+  }
+
+  .button-contact {
+    @apply mt-10  bg-[var(--color-active)] rounded-md h-12 px-5 py-3 w-full shadow-xl sm:flex-1 sm:mt-0 hover:bg-white hover:cursor-pointer hover:text-[var(--color-active)];
+  }
+
+  .button-login {
+    @apply border w-full rounded-md border-white text-white bg-transparent font-bold px-4 py-2 hover:cursor-pointer sm:text-white sm:bg-[var(--color-active)] sm:border-[var(--color-active)] hover:bg-white hover:text-[var(--color-active)];
+  }
+
+  .button-primary {
+    @apply text-white font-bold text-lg border border-[var(--color-primary)] bg-[var(--color-primary)] rounded-md px-5 py-3 shadow-xl hover:bg-white hover:text-[var(--color-primary)] hover:cursor-pointer;
+  }
+
+  .button-secondary {
+    @apply text-gray-700 font-bold text-lg border border-transparent bg-gray-50 rounded-md px-5 py-3 shadow-xl hover:bg-gray-100 hover:cursor-pointer;
+  }
+
+  .tab-div {
+    @apply flex justify-center h-16 border-b border-gray-300 w-full text-xl text-gray-600 sm:px-4;
+  }
+
+  .collapse-header {
+    @apply flex justify-between items-center w-full text-gray-900 text-lg py-2 hover:cursor-pointer hover:text-[var(--color-active)];
+  }
+
+  .card {
+    @apply w-sm rounded-lg shadow-xl text-center flex flex-col items-center sm:max-w-80;
+  }
+
+  .error-input {
+    @apply bg-[url('images/icon-error.svg')] bg-no-repeat bg-size-[16px_16px] bg-position-[96%_50%] border-[var(--color-active)];
+  }
+}
+
+
+
+.hero-blob {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-blob::before {
+  content: "";
+  position: absolute;
+  right: -8%;        /* extend to the right */
+  left: 10%;            /* never go further left than the image/container */
+  top: 10%;           /* how high it starts behind the image */
+  bottom: 10%;       /* how far it goes under the image */
+  background-color: var(--color-primary);
+  border-radius: 9999px 0 0 9999px; /* left side rounded, right flat */
+  z-index: 0;
+}
+
+.hero-blob img {
+  position: relative;
+  z-index: 1;
+}
+
+.feature-blob {
+  position: relative;
+  display: inline-block;
+}
+
+/* Blue shape pinned to the left */
+.feature-blob::before {
+  content: "";
+  position: absolute;
+  left: -8%;         /* more to the left (increase this) */
+  right: 0;           /* never go further right than the image */
+  top: 40%;           /* how high it starts */
+  bottom: -12%;       /* how far under the image */
+  background-color: var(--color-primary);
+  border-radius: 0 9999px 9999px 0; /* right side rounded, left flat */
+  z-index: 0;
+}
+
+.feature-blob img {
+  position: relative;
+  z-index: 1;
+}

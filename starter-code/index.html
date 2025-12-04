@@ -12,9 +12,9 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
     <title>Bookmark</title>
 </head>
-<body style="font-family: Nunito, sans-serif;" class="bg-gray-100">
+<body>
     <header>
-        <nav class="px-6 py-8 w-full h-full flex flex-col sm:flex-row sm:bg-transparent sm:relative sm:justify-between sm:max-w-7xl sm:mx-auto" id="nav-bar">
+        <nav class="px-6 py-8 w-full h-full z-20 flex flex-col sm:flex-row sm:bg-transparent sm:relative sm:justify-between sm:max-w-7xl sm:mx-auto" id="nav-bar">
             <div class="flex justify-between">
                 <a href="#">
                     <svg width="148" height="25" xmlns="http://www.w3.org/2000/svg">
@@ -33,10 +33,10 @@
             </div>
             
             <ul class="flex-col flex-1 items-center mt-8 sm:flex sm:flex-initial sm:flex-row sm:mt-0 sm:justify-end sm:gap-16 hidden" id="nav-links">
-                <li class="border-t border-white w-full text-center py-6 sm:border-t-0 sm:py-0"><a href="#section-features" class="text-white font-bold sm:hover:text-red-500 sm:text-gray-700 sm:hover:cursor-pointer">FEATURES</a></li>
-                <li class="border-t border-white w-full text-center py-6 sm:border-t-0 sm:py-0"><a href="#section-download" class="text-white font-bold sm:hover:text-red-500 sm:text-gray-700 sm:hover:cursor-pointer">PRICING</a></li>
-                <li class="border-t border-white w-full text-center py-6 sm:border-t-0 sm:py-0"><a href="#section-contact" class="text-white font-bold sm:hover:text-red-500 sm:text-gray-700 sm:hover:cursor-pointer">CONTACT</a></li>
-                <li class="flex border-t border-white w-full text-center py-10 px-8 sm:border-t-0 sm:py-0 sm:px-0"><a class="border w-full rounded-md border-white text-white bg-transparent font-bold px-4 py-2 sm:hover:cursor-pointer sm:text-white sm:bg-red-600 sm:border-red-600 sm:hover:bg-white sm:hover:text-red-600">LOGIN</a></li>
+                <li class="nav-li"><a href="#section-features" class="nav-link">FEATURES</a></li>
+                <li class="nav-li"><a href="#section-download" class="nav-link">PRICING</a></li>
+                <li class="nav-li"><a href="#section-contact" class="nav-link">CONTACT</a></li>
+                <li class="flex border-t border-white w-full text-center py-10 px-8 sm:border-t-0 sm:py-0 sm:px-0"><a class="button-login">LOGIN</a></li>
                 <li class="flex gap-4 mt-auto mb-16 sm:hidden">
                     <img src="images/icon-facebook.svg" alt="Facebook" id="logo-facebook">
                     <img src="images/icon-twitter.svg" alt="Twitter" id="logo-twitter">
@@ -50,111 +50,112 @@
                 <h1 class="text-4xl/relaxed font-bold mb-6 sm:text-5xl/relaxed">A Simple Bookmark Manager</h1>
                 <p class="text-xl/relaxed text-gray-500">A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free.</p>
                 <div class="mt-10 flex gap-2 sm:justify-start justify-center">
-                    <button class="text-white font-bold text-lg border border-indigo-600 bg-indigo-600 rounded-md px-5 py-3 shadow-xl sm:hover:bg-white sm:hover:text-indigo-600 sm:hover:cursor-pointer">Get it on Chrome</button>
-                    <button class="text-gray-700 font-bold text-lg border border-transparent bg-gray-50 rounded-md px-5 py-3 shadow-xl sm:hover:bg-gray-100 sm:hover:cursor-pointer">Get it on Firefox</button>
+                    <button class="button-primary">Get it on Chrome</button>
+                    <button class="button-secondary">Get it on Firefox</button>
                 </div>
             </div>
-            <div class="sm:flex-1 sm:flex sm:justify-end">
-                <div class=""></div>
-                <div class=""></div>
-                <img src="images/illustration-hero.svg" alt="Illustration of a hero section">
+            <div class="sm:flex-1 sm:flex sm:justify-end relative hero-blob">
+                <img class="z-10 relative" src="images/illustration-hero.svg" alt="Illustration of a hero section">
             </div>
         </section>
 
         <section class="px-10 mt-40 sm:max-w-7xl sm:mx-auto" id="section-features">
             <div class="text-center max-w-xl mx-auto mb-20">
-                <h2 class="text-3xl font-bold text-center mb-6">Features</h2>
+                <h2 class="header-2">Features</h2>
                 <p class="text-xl/relaxed text-gray-500">Our aim is to make quick and easy fro you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.</p>
             </div>
             <div role="tablist" class="mt-10 mb-20 flex flex-col items-center sm:flex-row sm:justify-center sm:max-w-4xl sm:mx-auto">
-                <div class="flex justify-center h-16 border-t sm:border-t-0 border-b border-gray-300 w-full text-xl text-gray-600 sm:px-4">
-                    <button class="border-b-2 border-red-500 text-gray-900 sm:hover:cursor-pointer sm:hover:border-b-2 sm:hover:border-red-600 sm:border-b-2" id="tab-1" role="tab" aria-selected="true" aria-controls="tabFeatures1">Simple Bookmarking</button>
+                <div class="tab-div sm:border-t-0 border-t">
+                    <button class="hover:cursor-pointer hover:border-b-2 hover:border-red-600 border-b-2 border-active text-gray-900 sm:border-b-2" id="tab-1" role="tab" aria-selected="true" aria-controls="tabFeatures1">Simple Bookmarking</button>
                 </div>
-                <div class="flex justify-center h-16 border-b border-gray-300 w-full text-xl text-gray-600 sm:px-4">
-                    <button class="sm:hover:cursor-pointer sm:hover:border-b-2 sm:hover:border-red-600 sm:border-b-2 sm:border-transparent" id="tab-2" role="tab" aria-selected="false" aria-controls="tabFeatures2" tabindex="-1">Speedy Searching</button>
+                <div class="tab-div">
+                    <button class="hover:cursor-pointer hover:border-b-2 hover:border-red-600 sm:border-b-2 sm:border-transparent" id="tab-2" role="tab" aria-selected="false" aria-controls="tabFeatures2" tabindex="-1">Speedy Searching</button>
                 </div>
-                <div class="flex justify-center h-16 border-b border-gray-300 w-full text-xl text-gray-600 sm:px-4">
-                    <button class="sm:hover:cursor-pointer sm:hover:border-b-2 sm:hover:border-red-600 sm:border-b-2 sm:border-transparent" id="tab-3" role="tab" aria-selected="false" aria-controls="tabFeatures3" tabindex="-1">Easy Sharing</button>
+                <div class="tab-div">
+                    <button class="hover:cursor-pointer hover:border-b-2 hover:border-red-600 sm:border-b-2 sm:border-transparent" id="tab-3" role="tab" aria-selected="false" aria-controls="tabFeatures3" tabindex="-1">Easy Sharing</button>
                 </div>
             </div>
 
             <div class="flex flex-col sm:flex-row sm:items-center sm:gap-14" id="tabFeatures1" role="tabpanel" aria-labelledby="tab-1" tabindex="0">
                 <div class="sm:flex-1">
-                    <div class="bg-feature"></div>
-                    <img src="images/illustration-features-tab-1.svg" alt="Feature illustration 1">
+                    <div class="feature-blob">
+                        <img src="images/illustration-features-tab-1.svg" alt="Feature illustration 1">
+                    </div>
                 </div>
                 <div class="mt-20 text-center sm:text-left sm:flex-1 sm:mt-0">
                     <h3 class="text-3xl font-bold mb-6">Bookmark in one click</h3>
                     <p class="text-xl/relaxed text-gray-500">Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites.</p>
-                    <button class="mt-10 text-white font-bold text-lg border border-indigo-600 bg-indigo-600 rounded-md px-5 py-3 shadow-xl sm:hover:bg-white sm:hover:text-indigo-600 sm:hover:cursor-pointer">More info</button>
+                    <button class="mt-10 button-primary">More info</button>
                 </div>
             </div>
             <div class="flex flex-col sm:flex-row sm:items-center sm:gap-14" id="tabFeatures2" role="tabpanel" aria-labelledby="tab-2" tabindex="0">
                 <div class="sm:flex-1">
-                    <div class="bg-feature"></div>
-                    <img src="images/illustration-features-tab-2.svg" alt="Feature illustration 2">
+                    <div class="feature-blob">
+                        <img src="images/illustration-features-tab-2.svg" alt="Feature illustration 2">
+                    </div>
                 </div>
                 <div class="mt-20 text-center sm:text-left sm:flex-1 sm:mt-0">
                     <h3 class="text-3xl font-bold mb-6">Intelligent search</h3>
                     <p class="text-xl/relaxed text-gray-500">Our powerful search feature will help you find saved sites in no time at all. No need to trawl though all of your bookmarks.</p>
-                    <button class="mt-10 text-white font-bold text-lg border border-indigo-600 bg-indigo-600 rounded-md px-5 py-3 shadow-xl sm:hover:bg-white sm:hover:text-indigo-600 sm:hover:cursor-pointer">More info</button>
+                    <button class="mt-10 button-primary">More info</button>
                 </div>
             </div>
             <div class="flex flex-col sm:flex-row sm:items-center sm:gap-14" id="tabFeatures3" role="tabpanel" aria-labelledby="tab-3" tabindex="0">
                 <div class="sm:flex-1">
-                    <div class="bg-feature"></div>
-                    <img src="images/illustration-features-tab-3.svg" alt="Feature illustration 3">
+                    <div class="feature-blob">
+                        <img src="images/illustration-features-tab-3.svg" alt="Feature illustration 3">
+                    </div>
                 </div>
                 <div class="mt-20 text-center sm:text-left sm:flex-1 sm:mt-0">
                     <h3 class="text-3xl font-bold mb-6">Share your bookmarks</h3>
                     <p class="text-xl/relaxed text-gray-500">Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.</p>
-                    <button class="mt-10 text-white font-bold text-lg border border-indigo-600 bg-indigo-600 rounded-md px-5 py-3 shadow-xl sm:hover:bg-white sm:hover:text-indigo-600 sm:hover:cursor-pointer">More info</button>
+                    <button class="mt-10 button-primary">More info</button>
                 </div>
             </div>
         </section>
 
         <section class="px-10 mt-40 sm:max-w-7xl sm:mx-auto" id="section-download">
             <div class="text-center max-w-xl mx-auto">
-                <h2 class="text-3xl font-bold text-center mb-6">Download the extension</h2>
+                <h2 class="header-2">Download the extension</h2>
                 <p class="text-xl/relaxed text-gray-500">We've got more browsers in the pipeline. Please do let us know if you've got a favourite you'd like us to prioritize.</p>
             </div>
             <div class="mt-20 flex flex-col items-center gap-20 sm:flex-row sm:gap-4 sm:justify-center">
-                <div class="w-sm rounded-lg shadow-xl text-center flex flex-col items-center sm:max-w-80">
+                <div class="card">
                     <img src="images/logo-chrome.svg" alt="Logo Chrome" class="py-14">
                     <h3 class="text-xl font-bold text-center">Add to Chrome</h3>
                     <small class="text-sm text-gray-500 mt-3">Minimum version 6.2</small>
                     <img class="mt-8" src="images/bg-dots.svg" alt="">
-                    <button class="mt-6 mb-6 text-white font-bold text-lg border border-indigo-600 bg-indigo-600 rounded-md px-5 py-3 shadow-xl sm:hover:bg-white sm:hover:text-indigo-600 sm:hover:cursor-pointer">Add & Install Extension</button>
+                    <button class="mt-6 mb-6 button-primary">Add & Install Extension</button>
                 </div>
 
-                <div class="w-sm rounded-lg shadow-xl text-center flex flex-col items-center sm:max-w-80 sm:pt-10">
+                <div class="card sm:pt-10">
                     <img src="images/logo-firefox.svg" alt="Logo Firefox" class="py-14">
                     <h3 class="text-xl font-bold text-center">Add to Firefox</h3>
                     <small class="text-sm text-gray-500 mt-3">Minimun version 55</small>
                     <img class="mt-8" src="images/bg-dots.svg" alt="">
-                    <button class="mt-6 mb-6 text-white font-bold text-lg border border-indigo-600 bg-indigo-600 rounded-md px-5 py-3 shadow-xl sm:hover:bg-white sm:hover:text-indigo-600 sm:hover:cursor-pointer">Add & Install Extension</button>
+                    <button class="mt-6 mb-6 button-primary">Add & Install Extension</button>
                 </div>
 
-                <div class="w-sm rounded-lg shadow-xl text-center flex flex-col items-center sm:max-w-80 sm:pt-20">
+                <div class="card sm:pt-20">
                     <img src="images/logo-opera.svg" alt="Logo Opera" class="py-14">
                     <h3 class="text-xl font-bold text-center">Add to Opera</h3>
                     <small class="text-sm text-gray-500 mt-3">Minimum version 46</small>
                     <img class="mt-8" src="images/bg-dots.svg" alt="">
-                    <button class="mt-6 mb-6 text-white font-bold text-lg border border-indigo-600 bg-indigo-600 rounded-md px-5 py-3 shadow-xl sm:hover:bg-white sm:hover:text-indigo-600 sm:hover:cursor-pointer">Add & Install Extension</button>
+                    <button class="mt-6 mb-6 button-primary">Add & Install Extension</button>
                 </div>
             </div>
         </section>
 
         <section class="px-10 mt-40 sm:max-w-7xl sm:mx-auto" id="section-faq">
             <div class="text-center max-w-xl mx-auto">
-                <h2 class="text-3xl font-bold text-center mb-6">Frequently Asked Questions</h2>
+                <h2 class="header-2">Frequently Asked Questions</h2>
                 <p class="text-xl/relaxed text-gray-500">Here are some of our FAQs. If you have any other questions you'd like answered please feel free to email.us</p>
             </div>
             <div class="mt-20 flex flex-col items-center gap-6 sm:max-w-xl sm:mx-auto">
                 <div class="border-b border-gray-300 w-full">
-                    <button class="collapse-btn flex justify-between items-center w-full text-gray-900 text-lg py-2 sm:hover:text-red-500 sm:hover:cursor-pointer" aria-expanded="false" aria-controls="collapse-content-1">What is Bookmark? 
+                    <button class="collapse-header" aria-expanded="false" aria-controls="collapse-content-1">What is Bookmark? 
                         <div class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" class="transition-transform duration-300"><path class="stroke-indigo-600" fill="none" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" class="transition-transform duration-300"><path class="stroke-primary" fill="none" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
                         </div>
                     </button>
                     <div class="hidden max-h-0 py-3" id="collapse-content-1">
@@ -162,9 +163,9 @@
                     </div>
                 </div>
                 <div class="border-b border-gray-300 w-full">
-                    <button class="collapse-btn flex justify-between items-center w-full text-gray-900 text-lg py-2 sm:hover:text-red-500 sm:hover:cursor-pointer" aria-expanded="false" aria-controls="collapse-content-2">How can I request a new browser? 
+                    <button class="collapse-header" aria-expanded="false" aria-controls="collapse-content-2">How can I request a new browser? 
                         <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" class="transition-transform duration-300"><path class="stroke-indigo-600" fill="none" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" class="transition-transform duration-300"><path class="stroke-primary" fill="none" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
                         </div>
                     </button>
                     <div class="hidden max-h-0 py-3" id="collapse-content-2">
@@ -172,9 +173,9 @@
                     </div>
                 </div>
                 <div class="border-b border-gray-300 w-full">
-                    <button class="collapse-btn flex justify-between items-center w-full text-gray-900 text-lg py-2 sm:hover:text-red-500 sm:hover:cursor-pointer" aria-expanded="false" aria-controls="collapse-content-3">Is there a mobile app? 
+                    <button class="collapse-header" aria-expanded="false" aria-controls="collapse-content-3">Is there a mobile app? 
                         <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" class="transition-transform duration-300"><path class="stroke-indigo-600" fill="none" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" class="transition-transform duration-300"><path class="stroke-primary" fill="none" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
                         </div>
                     </button>
                     <div class="hidden max-h-0 py-3" id="collapse-content-3">
@@ -182,9 +183,9 @@
                     </div>
                 </div>
                 <div class="border-b border-gray-300 w-full">
-                    <button class="collapse-btn flex justify-between items-center w-full text-gray-900 text-lg py-2 sm:hover:text-red-500 sm:hover:cursor-pointer" aria-expanded="false" aria-controls="collapse-content-4">What about Chronium browsers? 
+                    <button class="collapse-header" aria-expanded="false" aria-controls="collapse-content-4">What about Chronium browsers? 
                         <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" class="transition-transform duration-300"><path class="stroke-indigo-600" fill="none" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" class="transition-transform duration-300"><path class="stroke-primary" fill="none" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
                         </div>
                     </button>
                     <div class="hidden max-h-0 py-3" id="collapse-content-4">
@@ -193,33 +194,33 @@
                 </div>
             </div>
             <div class="text-center mt-10">
-                <button class="text-white font-bold text-lg border border-indigo-600 bg-indigo-600 rounded-md px-5 py-3 shadow-xl sm:hover:bg-white sm:hover:text-indigo-600 sm:hover:cursor-pointer">More Info</button>
+                <button class="button-primary">More Info</button>
             </div>
         </section>
 
-        <section class="py-20 mt-40 bg-indigo-600 w-full text-center text-white font-bold" id="section-contact">
+        <section class="py-20 mt-40 bg-primary w-full text-center text-white font-bold" id="section-contact">
             <div class="px-10 sm:max-w-3xl sm:mx-auto">
                 <span class="tracking-[.4em]">35.000+ ALREADY JOINED</span>
                 <h2 class="text-3xl mt-5 mb-10 sm:text-4xl sm:max-w-xl sm:mx-auto sm:px-6">Stay up-to-date with what we're doing</h2>
                 <form id="formContact" class="sm:flex sm:gap-6">
-                    <div class="sm:flex-3 rounded-md bg-red-500"> 
-                        <input type="text" placeholder="Enter your email address" class=" bg-[url('images/icon-error.svg')] bg-no-repeat bg-size-[16px_16px] bg-position-[96%_50%] w-full h-12 bg-white border border-red-500 text-gray-700 rounded-md px-5 py-3" id="emailInput">
-                        <div class="text-start px-5 bg-red-600 rounded-b-md" id="errorMessage">Whoops, make sure it's an email</div>
+                    <div class="sm:flex-3 rounded-md" id="input-div"> 
+                        <input type="text" placeholder="Enter your email address" class=" w-full h-12 bg-white border border-gray-500 text-gray-700 rounded-md px-5 py-3" id="emailInput">
+                        <div class="hidden text-start px-5 bg-active rounded-b-md" id="errorMessage">Whoops, make sure it's an email</div>
                     </div>
-                    <button class="mt-10 bg-red-600 rounded-md h-12 px-5 py-3 w-full shadow-xl sm:flex-1 sm:mt-0 sm:hover:bg-white sm:hover:cursor-pointer sm:hover:text-red-600">Contact Us</button>
+                    <button class="button-contact">Contact Us</button>
                 </form>
             </div>
         </section>
     </main>
-    <footer class="bg-indigo-950 py-20 sm:py-10">
-        <nav class="flex flex-col items-center gap-10 text-white text-lg tracking-widest sm:flex-row sm:px-10 sm:max-w-7xl sm:mx-auto">
+    <footer class="bg-footer py-20 sm:py-10">
+        <nav class="flex flex-col items-center gap-10 text-white text-lg sm:flex-row sm:px-10 sm:max-w-7xl sm:mx-auto">
             <a href="#"><img src="images/logo-bookmark-white.svg" alt="Logo Bookmark"></a>
-            <a href="#section-features" class="nav-item sm:hover:text-red-500">FEATURES</a>
-            <a href="#section-download" class="nav-item sm:hover:text-red-500">PRICING</a>
-            <a href="#section-contact" class="nav-item sm:hover:text-red-500">CONTACT</a>
+            <a href="#section-features" class="nav-item hover:text-active tracking-widest">FEATURES</a>
+            <a href="#section-download" class="nav-item hover:text-active tracking-widest">PRICING</a>
+            <a href="#section-contact" class="nav-item hover:text-active tracking-widest">CONTACT</a>
             <div class="flex gap-10 items-center sm:ml-auto">
-                <a href="#" aria-label="Open Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="20"><path class="fill-white sm:hover:fill-red-500" fill-rule="evenodd" d="M24 2.557a9.83 9.83 0 0 1-2.828.775A4.932 4.932 0 0 0 23.337.608a9.864 9.864 0 0 1-3.127 1.195A4.916 4.916 0 0 0 16.616.248c-3.179 0-5.515 2.966-4.797 6.045A13.978 13.978 0 0 1 1.671 1.149a4.93 4.93 0 0 0 1.523 6.574 4.903 4.903 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 0 1-2.224.084 4.928 4.928 0 0 0 4.6 3.419A9.9 9.9 0 0 1 0 17.54a13.94 13.94 0 0 0 7.548 2.212c9.142 0 14.307-7.721 13.995-14.646A10.025 10.025 0 0 0 24 2.557z"/></svg></a>
-                <a href="#" aria-label="Open Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path class="fill-white sm:hover:fill-red-500" fill-rule="evenodd" d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg></a>
+                <a href="#" aria-label="Open Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="20"><path class="fill-white hover:fill-active" fill-rule="evenodd" d="M24 2.557a9.83 9.83 0 0 1-2.828.775A4.932 4.932 0 0 0 23.337.608a9.864 9.864 0 0 1-3.127 1.195A4.916 4.916 0 0 0 16.616.248c-3.179 0-5.515 2.966-4.797 6.045A13.978 13.978 0 0 1 1.671 1.149a4.93 4.93 0 0 0 1.523 6.574 4.903 4.903 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 0 1-2.224.084 4.928 4.928 0 0 0 4.6 3.419A9.9 9.9 0 0 1 0 17.54a13.94 13.94 0 0 0 7.548 2.212c9.142 0 14.307-7.721 13.995-14.646A10.025 10.025 0 0 0 24 2.557z"/></svg></a>
+                <a href="#" aria-label="Open Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path class="fill-white hover:fill-active" fill-rule="evenodd" d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg></a>
             </div>
         </nav>
     </footer>
