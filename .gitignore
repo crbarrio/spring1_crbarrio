@@ -1,0 +1,23 @@
+# Node dependencies
+node_modules/
+
+# Build / compiled assets
+starter-code/styles.css
+starter-code/style.css
+starter-code/style.css.map
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Environment / secrets
+.env
+.env.*
