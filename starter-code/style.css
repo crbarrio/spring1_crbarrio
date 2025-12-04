@@ -718,6 +718,12 @@
   .bg-primary {
     background-color: var(--color-primary);
   }
+  .stroke-primary {
+    stroke: var(--color-primary);
+  }
+  .stroke-active {
+    stroke: var(--color-active);
+  }
 }
 @layer components {
   .header-2 {

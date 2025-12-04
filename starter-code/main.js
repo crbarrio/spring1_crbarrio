@@ -172,7 +172,7 @@ const collapsibleElements = document.getElementsByClassName('collapse-header')
 for (let i = 0; i < collapsibleElements.length; i++) {
     collapsibleElements[i].addEventListener('click', function () {
 
-        this.getElementsByTagName('svg')[0].getElementsByTagName('path')[0].classList.toggle('stroke-red-500');
+        this.getElementsByTagName('svg')[0].getElementsByTagName('path')[0].classList.toggle('stroke-active');
         this.getElementsByTagName('svg')[0].classList.toggle('rotate-180');
 
         const isExpanded = this.getAttribute('aria-expanded') === 'true';
