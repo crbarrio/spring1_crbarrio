@@ -199,8 +199,14 @@
   .absolute {
     position: absolute;
   }
+  .fixed {
+    position: fixed;
+  }
   .relative {
     position: relative;
+  }
+  .inset-0 {
+    inset: calc(var(--spacing) * 0);
   }
   .z-10 {
     z-index: 10;
@@ -362,9 +368,6 @@
   }
   .fill-white {
     fill: var(--color-white);
-  }
-  .stroke-red-500 {
-    stroke: var(--color-red-500);
   }
   .px-5 {
     padding-inline: calc(var(--spacing) * 5);

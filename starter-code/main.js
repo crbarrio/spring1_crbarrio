@@ -12,7 +12,7 @@ openMenu.addEventListener('click', function () {
 
     openMenu.classList.add('hidden');
     closeMenu.classList.remove('hidden');
-    navbar.classList.add('bg-slate-600/90', 'absolute');
+    navbar.classList.add('bg-slate-600/90', 'fixed');
     logoBookmark.classList.add('fill-white');
 
 });
@@ -23,7 +23,7 @@ closeMenu.addEventListener('click', function () {
 
     closeMenu.classList.add('hidden');
     openMenu.classList.remove('hidden');
-    navbar.classList.remove('bg-slate-600/90', 'absolute');
+    navbar.classList.remove('bg-slate-600/90', 'fixed');
     logoBookmark.classList.remove('fill-white');
 
 });
