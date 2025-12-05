@@ -14,7 +14,6 @@
 }
 
 @layer utilities {
-  /* base + hover variant, like Tailwind */
   .text-active {
     color: var(--color-active);
   }
@@ -101,12 +100,12 @@
 .hero-blob::before {
   content: "";
   position: absolute;
-  right: -8%;        /* extend to the right */
-  left: 10%;            /* never go further left than the image/container */
-  top: 10%;           /* how high it starts behind the image */
-  bottom: 10%;       /* how far it goes under the image */
+  right: -8%;
+  left: 10%;
+  top: 10%;
+  bottom: 10%;
   background-color: var(--color-primary);
-  border-radius: 9999px 0 0 9999px; /* left side rounded, right flat */
+  border-radius: 9999px 0 0 9999px;
   z-index: 0;
 }
 
@@ -120,16 +119,16 @@
   display: inline-block;
 }
 
-/* Blue shape pinned to the left */
+
 .feature-blob::before {
   content: "";
   position: absolute;
-  left: -8%;         /* more to the left (increase this) */
-  right: 0;           /* never go further right than the image */
-  top: 40%;           /* how high it starts */
-  bottom: -12%;       /* how far under the image */
+  left: -8%;         
+  right: 0;           
+  top: 40%;           
+  bottom: -12%;       
   background-color: var(--color-primary);
-  border-radius: 0 9999px 9999px 0; /* right side rounded, left flat */
+  border-radius: 0 9999px 9999px 0;
   z-index: 0;
 }
 
