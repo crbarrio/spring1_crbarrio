@@ -35,6 +35,19 @@
   .bg-primary {
     @apply bg-[var(--color-primary)];
   }
+
+  .bg-active {
+    @apply bg-[var(--color-active)];
+  }
+
+  .border-active {
+    border-color: var(--color-active);
+  }
+
+  .hover\:border-active:hover {
+    border-color: var(--color-active);
+  }
+
   .stroke-primary {
     stroke: var(--color-primary);
   }
@@ -54,23 +67,23 @@
   }
 
   .nav-link {
-    @apply text-white font-bold tracking-widest hover:cursor-pointer sm:text-gray-700 hover:text-[var(--color-active)];
+    @apply text-white text-lg sm:text-base tracking-widest hover:cursor-pointer sm:text-gray-700 hover:text-[var(--color-active)];
   }
 
   .button-contact {
-    @apply mt-10  bg-[var(--color-active)] rounded-md h-12 px-5 py-3 w-full shadow-xl sm:flex-1 sm:mt-0 hover:bg-white hover:cursor-pointer hover:text-[var(--color-active)];
+    @apply mt-4  bg-[var(--color-active)] rounded-md h-12 px-5 py-3 w-full shadow-xl sm:flex-1 sm:mt-0 hover:bg-white hover:cursor-pointer hover:text-[var(--color-active)] border-3 border-[var(--color-active)] text-white font-bold text-lg sm:text-base;
   }
 
   .button-login {
-    @apply border w-full rounded-md border-white text-white bg-transparent font-bold px-4 py-2 hover:cursor-pointer sm:text-white sm:bg-[var(--color-active)] sm:border-[var(--color-active)] hover:bg-white hover:text-[var(--color-active)];
+    @apply border-3 text-lg w-full rounded-md border-white text-white bg-transparent font-bold px-4 py-2 hover:cursor-pointer sm:text-white sm:text-base sm:font-medium sm:px-10 sm:bg-[var(--color-active)] sm:border-[var(--color-active)] hover:bg-white hover:text-[var(--color-active)];
   }
 
   .button-primary {
-    @apply text-white font-bold text-lg border border-[var(--color-primary)] bg-[var(--color-primary)] rounded-md px-5 py-3 shadow-xl hover:bg-white hover:text-[var(--color-primary)] hover:cursor-pointer;
+    @apply text-white font-bold text-sm sm:text-lg border-3 border-[var(--color-primary)] bg-[var(--color-primary)] rounded-md px-5 py-3 shadow-xl hover:bg-white hover:text-[var(--color-primary)] hover:cursor-pointer;
   }
 
   .button-secondary {
-    @apply text-gray-700 font-bold text-lg border border-transparent bg-gray-50 rounded-md px-5 py-3 shadow-xl hover:bg-gray-100 hover:cursor-pointer;
+    @apply text-gray-700 font-bold text-sm sm:text-lg border-3 border-transparent bg-gray-50 rounded-md px-5 py-3 shadow-xl hover:border-gray-700 hover:cursor-pointer;
   }
 
   .tab-div {
@@ -78,15 +91,15 @@
   }
 
   .collapse-header {
-    @apply flex justify-between items-center w-full text-gray-900 text-lg py-2 hover:cursor-pointer hover:text-[var(--color-active)];
+    @apply flex justify-between items-center w-full text-gray-900 text-lg py-5 hover:cursor-pointer hover:text-[var(--color-active)];
   }
 
   .card {
-    @apply w-sm rounded-lg shadow-xl text-center flex flex-col items-center sm:max-w-80;
+    @apply rounded-lg shadow-xl text-center flex flex-col items-center sm:max-w-80;
   }
 
   .error-input {
-    @apply bg-[url('images/icon-error.svg')] bg-no-repeat bg-size-[16px_16px] bg-position-[96%_50%] border-[var(--color-active)];
+    @apply bg-[url('images/icon-error.svg')] bg-no-repeat bg-size-[18px_18px] bg-position-[96%_50%] border-[var(--color-active)] border-3;
   }
 }
 

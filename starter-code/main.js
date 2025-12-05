@@ -12,7 +12,7 @@ openMenu.addEventListener('click', function () {
 
     openMenu.classList.add('hidden');
     closeMenu.classList.remove('hidden');
-    navbar.classList.add('bg-slate-600/90', 'fixed');
+    navbar.classList.add('bg-slate-800/95', 'fixed');
     logoBookmark.classList.add('fill-white');
 
 });
@@ -23,7 +23,7 @@ closeMenu.addEventListener('click', function () {
 
     closeMenu.classList.add('hidden');
     openMenu.classList.remove('hidden');
-    navbar.classList.remove('bg-slate-600/90', 'fixed');
+    navbar.classList.remove('bg-slate-800/95', 'fixed');
     logoBookmark.classList.remove('fill-white');
 
 });
@@ -74,7 +74,7 @@ class TabsAutomatic {
         tab.setAttribute('aria-selected', 'true');
         tab.removeAttribute('tabindex');
         tab.classList.remove('sm:border-transparent');
-        tab.classList.add('border-b-2', 'border-red-500', 'text-gray-900');
+        tab.classList.add('border-b-3', 'border-active', 'text-gray-900');
         this.tabpanels[i].classList.add('flex');
         this.tabpanels[i].classList.remove('hidden');
 
@@ -85,7 +85,7 @@ class TabsAutomatic {
       } else {
         tab.setAttribute('aria-selected', 'false');
         tab.tabIndex = -1;
-        tab.classList.remove('border-b-2', 'border-red-500', 'text-gray-900');
+        tab.classList.remove('border-b-3', 'border-active', 'text-gray-900');
         tab.classList.add('sm:border-transparent');
         this.tabpanels[i].classList.add('hidden');
         this.tabpanels[i].classList.remove('flex');
@@ -201,7 +201,7 @@ formContact.addEventListener('submit', function(event) {
     const errorMessage = document.getElementById('errorMessage');
 
     errorMessage.classList.add('hidden');
-    inputDiv.classList.remove('bg-red-500');
+    inputDiv.classList.remove('bg-active');
     emailInput.classList.remove("error-input");
     emailInput.classList.add('border-gray-500');
 
@@ -211,8 +211,7 @@ formContact.addEventListener('submit', function(event) {
     if (!emailRegex.test(email)) {
       errorMessage.classList.remove('hidden');
       emailInput.classList.remove('border-gray-500');
-      emailInput.classList.add('input-error');
-      inputDiv.classList.add('bg-red-500');
+      inputDiv.classList.add('bg-active');
       emailInput.classList.add("error-input");
     }
 });
