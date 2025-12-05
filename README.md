@@ -1,4 +1,4 @@
-# Bookmark Landing Page
+# Bookmark Landing Page (Tailwind CSS Version)
 
 Responsive marketing landing page for a fictional "Bookmark" browser extension. Built as a front-end practice project with semantic HTML, Tailwind CSS, and a small amount of vanilla JavaScript for interactivity.
 
